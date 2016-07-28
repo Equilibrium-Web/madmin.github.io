@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="MSecure Admin default website description.">
+    <title>Signup - MSecure Admin</title>
+    <!-- Favicons.-->
+    <link rel="apple-touch-icon-precomposed" href="./img/sites/Industries/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./img/sites/Industries/favicon/mstile-144x144.png">
+    <link rel="icon" href="./img/sites/Industries/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Android 5 Chrome Primaty Colour. (Change on primary CSS colour updates).-->
+    <meta name="theme-color" content="#F44336">
+    <!-- CSS.-->
+    <link href="./css/main.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Scripts-->
+    <script src="./js/jquery-3.1.0.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+  </head>
+  <body><div class="signupCard">
+  <div class="heading">
+    <h1>Sign Up</h1>
+    <img id="avatarImage" class="portrait" src="./img/login/defaultUser.png">
+    <label for="file-input">
+        <img id="uploadImage" class="select" src="./img/login/imgSelect.png">
+    </label>
+    <svg class="slant" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <polygon points="0,1 1,1 1,0">
+    </svg>
+  </div>
+
+  <form id="signup-form">
+    <input style="display: none;" id="file-input" type="file" onchange="displayUserImage()"/>
+
+    <div class="input-field">
+      <input id="name" type="text" class="validate">
+      <label for="name" class="">Name</label>
+    </div>
+    <div class="input-field">
+      <input id="email" type="email" class="validate">
+      <label for="email" class="">Email</label>
+    </div>
+    <div class="input-field">
+      <input id="username" type="text" class="validate">
+      <label for="username" class="">Username</label>
+    </div>
+    <div class="input-field">
+      <input id="password" type="password" class="validate">
+      <label for="password" class="">Password</label>
+    </div>
+
+    <center>
+      <br><a onclick="signUp();" href="./login.html" class="waves-effect waves-light btn blue">Sign Up</a>
+    </center>
+  </form>
+</div>
+
+<div class="signupFooter">
+  <a href="./terms.html" class="btn-flat waves-effect waves-light blue-text">Terms &amp; Conditions</a>
+  <a href="./login.html" class="btn-flat waves-effect waves-light blue-text">Sign In</a>
+</div>
+
+<script>
+  function displayUserImage(){
+    var preview = document.querySelector('img');
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+      preview.src = "";
+    }
+  }
+</script>
+
+    <script src="./js/sweetalert.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/buttons.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/forms.js"></script>
+    <script src="./js/waves.js"></script>
+    <script src="./js/sidenav.js"></script>
+  </body>
+</html>

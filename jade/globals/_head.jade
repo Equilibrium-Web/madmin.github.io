@@ -1,0 +1,32 @@
+meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+meta(http-equiv='X-UA-Compatible', content='IE=edge')
+meta(name='msapplication-tap-highlight', content='no')
+
+if meta_descript
+	meta(name='description', content='#{meta_descript}')
+else
+	meta(name='description', content='MSecure Admin default website description.')
+
+if page
+	title #{page} - MSecure Admin
+else
+	title MSecure Admin
+
+// Favicons.
+link(rel='apple-touch-icon-precomposed', href='./img/sites/Industries/favicon/apple-touch-icon-152x152.png')
+meta(name='msapplication-TileColor', content='#FFFFFF')
+meta(name='msapplication-TileImage', content='./img/sites/Industries/favicon/mstile-144x144.png')
+link(rel='icon', href='./img/sites/Industries/favicon/favicon-32x32.png', sizes='32x32')
+
+// Android 5 Chrome Primaty Colour. (Change on primary CSS colour updates).
+meta(name='theme-color', content='#F44336')
+
+// CSS.
+link(href='./css/main.css', type='text/css', rel='stylesheet', media='screen,projection')
+link(href='http://fonts.googleapis.com/css?family=Inconsolata', rel='stylesheet', type='text/css')
+link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
+// Scripts
+script(src="./js/jquery-3.1.0.js")
+script(src="./js/jquery-ui.js")

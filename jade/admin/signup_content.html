@@ -1,0 +1,60 @@
+<div class="signupCard">
+  <div class="heading">
+    <h1>Sign Up</h1>
+    <img id="avatarImage" class="portrait" src="./img/login/defaultUser.png">
+    <label for="file-input">
+        <img id="uploadImage" class="select" src="./img/login/imgSelect.png">
+    </label>
+    <svg class="slant" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <polygon points="0,1 1,1 1,0">
+    </svg>
+  </div>
+
+  <form id="signup-form">
+    <input style="display: none;" id="file-input" type="file" onchange="displayUserImage()"/>
+
+    <div class="input-field">
+      <input id="name" type="text" class="validate">
+      <label for="name" class="">Name</label>
+    </div>
+    <div class="input-field">
+      <input id="email" type="email" class="validate">
+      <label for="email" class="">Email</label>
+    </div>
+    <div class="input-field">
+      <input id="username" type="text" class="validate">
+      <label for="username" class="">Username</label>
+    </div>
+    <div class="input-field">
+      <input id="password" type="password" class="validate">
+      <label for="password" class="">Password</label>
+    </div>
+
+    <center>
+      <br><a onclick="signUp();" href="./login.html" class="waves-effect waves-light btn blue">Sign Up</a>
+    </center>
+  </form>
+</div>
+
+<div class="signupFooter">
+  <a href="./terms.html" class="btn-flat waves-effect waves-light blue-text">Terms &amp; Conditions</a>
+  <a href="./login.html" class="btn-flat waves-effect waves-light blue-text">Sign In</a>
+</div>
+
+<script>
+  function displayUserImage(){
+    var preview = document.querySelector('img');
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+      preview.src = "";
+    }
+  }
+</script>
