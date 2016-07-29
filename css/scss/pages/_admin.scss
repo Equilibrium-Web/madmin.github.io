@@ -1,0 +1,39 @@
+.sideBar {
+  height: 100%;
+  width: 250px;
+
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -250px;
+
+  background-color: $navbar-colour;
+
+  overflow-x: hidden;
+  padding-bottom: 7px;
+
+  transition: 0.5s;
+
+  -webkit-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+}
+
+.sidetitle {
+  z-index: 3;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 30px;
+
+  background-color: $primary-colour;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}

@@ -5,6 +5,7 @@ $primary-colour-dark: darken($primary-colour, 15%) !default;
 $background-colour: colour("grey", "lighten-5") !default;
 
 $secondary-colour: colour("blue", "accent-3") !default;
+$navbar-colour: colour("grey", "darken-3") !default;
 
 $success-colour: color("green", "base") !default;
 $error-colour: color("red", "base") !default;
