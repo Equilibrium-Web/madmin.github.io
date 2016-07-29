@@ -8,6 +8,12 @@ $("body").on("swipeleft", function() {
   openNav();
 });
 
+$( window ).resize(function() {
+  if (sidebarOpen) {
+    $("#topMenu").css("width", $(document).width() - 250);
+  }
+});
+
 function toggleNav() {
   if (sidebarOpen) {
     closeNav();
@@ -17,17 +23,27 @@ function toggleNav() {
 }
 
 function openNav() {
-  $("#sideBar").animate({
+  $("#sideMenu").animate({
     left: "0px",
   }, 750, function() {
   });
+  $("#topMenu").animate({
+    width: $(document).width() - 250,
+  }, 750, function() {
+  });
   sidebarOpen = true;
+  $("#navToggle").text('Close Sidebar');
 }
 
 function closeNav() {
-  $("#sideBar").animate({
+  $("#sideMenu").animate({
     left: "-250px",
-  }, 750, function() {
+  }, 1000, function() {
+  });
+  $("#topMenu").animate({
+    width: "100%",
+  }, 1000, function() {
   });
   sidebarOpen = false;
+  $("#navToggle").text('Open Sidebar');
 }

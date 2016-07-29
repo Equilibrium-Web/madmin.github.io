@@ -7,6 +7,8 @@ html(lang="en")
   head
     include globals/_head.jade
   body
-    include admin/main_content.html
+    include globals/_navbar.jade
+    main
+      include admin/main_content.html
     include globals/_scripts.jade
     script(src="./js/admin.js")

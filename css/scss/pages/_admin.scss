@@ -1,8 +1,15 @@
-.sideBar {
+.main {
+
+}
+
+// Side Menu Bar
+#sideMenu {
   height: 100%;
   width: 250px;
 
-  z-index: 1;
+  overflow: hidden;
+
+  z-index: 3;
   position: fixed;
   top: 0;
   left: -250px;
@@ -12,28 +19,112 @@
   overflow-x: hidden;
   padding-bottom: 7px;
 
-  transition: 0.5s;
+  -webkit-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
+
+  #title {
+    z-index: 3;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 30px;
+    line-height: 50px;
+    height: 50px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    background-color: $primary-colour;
+  }
+
+  .active {
+    background-color: $primary-colour-dark;
+  }
+
+  ul {
+    height: 100%;
+  }
+
+  ul li {
+    height: 50px;
+    background-color: $primary-colour;
+    margin-bottom: 5px;
+  }
+
+  ul li a {
+    padding: 19px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #ddd;
+    text-transform: uppercase;
+    text-align: center;
+
+    transition: 0.5s;
+
+    &:hover {
+      color: #fff;
+      background-color: $primary-colour-dark;
+    }
+  }
+}
+
+@media screen and (max-height: 450px) {
+  #sideMenu {
+    padding-top: 15px;
+
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
+// Top Menu Bar
+#topMenu, ul, ul li, ul li a {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  cursor: pointer;
+}
+
+#topMenu {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 50px;
+
+  background-color: $navbar-colour;
 
   -webkit-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
   -moz-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
   box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
-}
 
-.sidetitle {
-  z-index: 3;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 30px;
-
-  background-color: $primary-colour;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
+  & > ul > li {
+    float: left;
+    text-align: center;
   }
 
-  .sidenav a {
-    font-size: 18px;
+  & > ul > li > a {
+    padding: 19px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #dddddd;
+    text-transform: uppercase;
+  }
+
+  & > ul > li:hover > a {
+    color: #ffffff;
   }
 }

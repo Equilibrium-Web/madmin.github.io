@@ -1,0 +1,26 @@
+if no_nav == false
+  #sideMenu
+    #title
+      p(style='color:#ffffff;') MSecure Admin
+    ul
+      li(class=(page == "Admin Main" ? "active" : ""))
+        a(href='./admin.html') Dashboard
+      li(class=(page == "Admin Posts" ? "active" : ""))
+        a(href='./posts.html') Posts
+      li(class=(page == "Admin Pages" ? "active" : ""))
+        a(href='./pages.html') Pages
+      li(class=(page == "Admin Themes" ? "active" : ""))
+        a(href='./themes.html') Themes
+      li(class=(page == "Admin Users" ? "active" : ""))
+        a(href='./users.html') Users
+      li(class=(page == "Admin Settings" ? "active" : ""))
+        a(href='./settings.html') Settings
+  #topMenu
+    ul
+      li
+        a#navToggle(onclick='toggleNav();') Close Sidebar
+      li
+        a New Page
+      li
+        a User Profile
+  
