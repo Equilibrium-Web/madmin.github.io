@@ -59,6 +59,13 @@ main {
     line-height: 50px;
     height: 50px;
 
+    cursor: default;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
     margin-bottom: 25px;
 
     text-align: center;
@@ -75,10 +82,22 @@ main {
   }
 
   ul li {
+    width: 100%;
     height: 50px;
     margin-bottom: 5px;
-      cursor: pointer;
-      width: 100%;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    &:hover:not(.active) {
+      a {
+        color: #fff;
+      }
+
+      background-color: $navbar-colour-highlight;
+    }
   }
 
   ul li a {
@@ -87,16 +106,8 @@ main {
     text-decoration: none;
     color: #ddd;
     text-transform: uppercase;
-    text-align: center;
 
     line-height: 50px;
-
-    transition: 0.5s;
-
-    &:hover {
-      color: #fff;
-      background-color: $navbar-colour-highlight;
-    }
   }
 }
 
@@ -142,9 +153,25 @@ main {
   -moz-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
   box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.44);
 
+  .active {
+    background-color: $primary-colour;
+  }
+
   & > ul > li {
     float: left;
     text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    &:hover:not(.active) {
+      a {
+        color: #fff;
+      }
+
+      background-color: $navbar-colour-highlight;
+    }
   }
 
   & > ul > li > a {
