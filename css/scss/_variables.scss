@@ -1,6 +1,6 @@
 
 /* Colours. **********/
-$primary-colour: colour("grey", "darken-1") !default;
+$primary-colour: colour("red", "lighten-2") !default;
 $primary-colour-light: lighten($primary-colour, 15%) !default;
 $primary-colour-dark: darken($primary-colour, 15%) !default;
 

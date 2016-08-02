@@ -14,6 +14,7 @@
     font-weight: 200;
     color: white;
     text-align: center;
+    font-weight: 400;
   }
 
   p {
@@ -28,7 +29,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding-top: 50px;
-    background-color: $primary-colour;
+    background-color: $primary-colour-dark;
     background-size: cover;
 
     .portrait {
