@@ -13,32 +13,39 @@
   <form id="signup-form">
     <input style="display: none;" id="file-input" type="file" onchange="displayUserImage()"/>
 
-    <div class="input-field">
-      <input id="name" type="text" class="validate">
-      <label for="name" class="">Name</label>
+    <div class="text-input">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" placeholder="" />
+      <span class="separator"> </span>
     </div>
-    <div class="input-field">
-      <input id="email" type="email" class="validate">
-      <label for="email" class="">Email</label>
+
+    <div class="text-input">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" placeholder="" />
+      <span class="separator"> </span>
     </div>
-    <div class="input-field">
-      <input id="username" type="text" class="validate">
-      <label for="username" class="">Username</label>
+
+    <div class="text-input">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="" />
+      <span class="separator"> </span>
     </div>
-    <div class="input-field">
-      <input id="password" type="password" class="validate">
-      <label for="password" class="">Password</label>
+
+    <div class="text-input">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="" />
+      <span class="separator"> </span>
     </div>
 
     <center>
-      <br><a onclick="signUp();" href="./login.html" class="waves-effect waves-light btn blue">Sign Up</a>
+      <br><a onclick="signUp();" href="./login.html" class="btn btn-medium btn-blue btn-radius waves-effect">Sign Up</a>
     </center>
   </form>
 </div>
 
 <div class="signupFooter">
-  <a href="./terms.html" class="btn-flat waves-effect waves-light blue-text">Terms &amp; Conditions</a>
-  <a href="./login.html" class="btn-flat waves-effect waves-light blue-text">Sign In</a>
+  <a href="./terms.html" class="btn btn-medium btn-clear blue-text waves-effect">Terms &amp; Conditions</a>
+  <a href="./login.html" class="btn btn-medium btn-clear blue-text waves-effect">Sign In</a>
 </div>
 
 <script>

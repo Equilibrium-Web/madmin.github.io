@@ -2,6 +2,8 @@ var sidebarOpen = false;
 
 $(document).ready(function() {
   openNav();
+  $("body").append('<script src="./js/style.js"></script>');
+  $("body").append('<script src="./js/prism.js"></script>');
 });
 
 $("body").on("swipeleft", function() {
