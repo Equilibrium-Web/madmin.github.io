@@ -1,7 +1,7 @@
 var sidebarOpen = false;
 
 $(document).ready(function() {
-  openNav();
+  toggleNav();
   $("body").append('<script src="./js/style.js"></script>');
   $("body").append('<script src="./js/prism.js"></script>');
 });
@@ -17,44 +17,13 @@ $( window ).resize(function() {
   }
 });
 
+$(".openNav").click(function() {
+  toggleNav();
+});
+
 function toggleNav() {
-  if (sidebarOpen) {
-    closeNav();
-  } else {
-    openNav();
-  }
-}
-
-function openNav() {
-  $("#sideMenu").animate({
-    left: "0px",
-  }, 750, function() {
-  });
-  $("#topMenu").animate({
-    width: $(document).width() - 250,
-  }, 750, function() {
-  });
-  $("#main").animate({
-    paddingLeft: 250 + ($(document).width() * 0.02),
-  }, 750, function() {
-  });
-  sidebarOpen = true;
-  $("#navToggle").text('Close Sidebar');
-}
-
-function closeNav() {
-  $("#sideMenu").animate({
-    left: "-250px",
-  }, 1000, function() {
-  });
-  $("#topMenu").animate({
-    width: "100%",
-  }, 1000, function() {
-  });
-  $("#main").animate({
-    paddingLeft: "2%",
-  }, 1000, function() {
-  });
-  sidebarOpen = false;
-  $("#navToggle").text('Open Sidebar');
+  $("body").toggleClass("navOpen");
+  $("nav").toggleClass("open");
+  $(".main").toggleClass("open");
+  $(this).toggleClass("open");
 }

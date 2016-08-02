@@ -1,8 +1,6 @@
 if no_nav == false
-  #sideMenu
-    #title
-      p(style='color:#ffffff;') MSecure Admin
-    ul
+  nav
+    ul#navlist
       li(class=(page == "Admin Main" ? "active" : ""))
         a(href='./admin.html') Dashboard
       li(class=(page == "Admin Posts" ? "active" : ""))
@@ -15,12 +13,5 @@ if no_nav == false
         a(href='./users.html') Users
       li(class=(page == "Admin Settings" ? "active" : ""))
         a(href='./settings.html') Settings
-  #topMenu
-    ul
-      li
-        a#navToggle(onclick='toggleNav();') Close Sidebar
-      li
-        a New Page
-      li
-        a User Profile
-  
+  .openNav
+    .icon
