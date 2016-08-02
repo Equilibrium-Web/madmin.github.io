@@ -3255,7 +3255,7 @@ form p { margin-bottom: 10px; text-align: left; }
 
 form p:last-child { margin-bottom: 0; }
 
-input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea { width: 100%; padding: 1em 0 12px; background: none; font-size: 1.2em; font-weight: 400; border: none; border-bottom: 1px solid #999; }
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea { width: 100%; padding: 1em 0 12px; background: none; font-size: 1.2em; font-weight: 400; border: none; border-bottom: 1px solid #999; transition: all 0.3s; }
 
 input:not([type]) .separator, input[type=text] .separator, input[type=password] .separator, input[type=email] .separator, input[type=url] .separator, input[type=time] .separator, input[type=date] .separator, input[type=datetime] .separator, input[type=datetime-local] .separator, input[type=tel] .separator, input[type=number] .separator, input[type=search] .separator, textarea .separator { transform: scaleX(1) translateY(-2px); opacity: 1; }
 
@@ -3425,11 +3425,10 @@ main .content { width: 100%; z-index: 3; overflow: hidden; display: block; paddi
 
 .signupCard #signup-form { margin-top: 2%; width: 360px; }
 
-.signupFooter { margin-bottom: 32px; margin-top: 30px; display: flex; width: 100%; justify-content: space-between; }
+.footerFloat { margin-bottom: 32px; margin-top: 30px; display: flex; width: 100%; justify-content: space-between; }
 
-.signupFooter a { text-transform: uppercase; text-decoration: none; color: #AAA; }
-
-.signupFooter a.sign-in-link { color: #3498DB; }
+.footerBottom { z-index: 2; position: absolute; bottom: 32px; display: flex; width: 100%; justify-content: space-between; }
 
 @media only screen and (max-width: 475px) { .signupCard p { width: 75%; }
-  .signupCard #signup-form { width: 75%; } }
+  .signupCard #signup-form { width: 75%; }
+  .footerBottom { margin-bottom: 32px; margin-top: 30px; display: flex; width: 100%; justify-content: space-between; } }

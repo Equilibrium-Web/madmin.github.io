@@ -72,24 +72,21 @@
   }
 }
 
-.signupFooter {
+.footerFloat {
   margin-bottom: 32px;
-
   margin-top: 30px;
-
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
 
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #AAA;
-  }
-
-  a.sign-in-link {
-    color: #3498DB;
-  }
+.footerBottom {
+  z-index: 2;
+  position: absolute;
+  bottom: 32px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 475px) {
@@ -101,5 +98,13 @@
     #signup-form {
       width: 75%;
     }
+  }
+
+  .footerBottom {
+    margin-bottom: 32px;
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 }
