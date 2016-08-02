@@ -1,5 +1,33 @@
-.main {
+main {
+  z-index: 1;
+  position: relative;
 
+  top: 50px;
+
+  padding: 2%;
+  margin-top: 4%;
+
+  width: 100%;
+  height: 100%;
+  background-color: $background-colour;
+
+  .content {
+    width: 100%;
+    z-index: 3;
+    overflow: hidden;
+    display: block;
+
+    padding: 3% 5%;
+    margin-bottom: 4%;
+    line-height: 25px;
+    border-radius: 5px;
+
+    background-color: colour("shades", "white");
+
+    -webkit-box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.44);
+    -moz-box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.44);
+    box-shadow: 3px 4px 10px -1px rgba(0, 0, 0, 0.44);
+  }
 }
 
 // Side Menu Bar
@@ -39,7 +67,7 @@
   }
 
   .active {
-    background-color: $primary-colour-dark;
+    background-color: $primary-colour;
   }
 
   ul {
@@ -48,8 +76,9 @@
 
   ul li {
     height: 50px;
-    background-color: $primary-colour;
     margin-bottom: 5px;
+      cursor: pointer;
+      width: 100%;
   }
 
   ul li a {
@@ -60,11 +89,13 @@
     text-transform: uppercase;
     text-align: center;
 
+    line-height: 50px;
+
     transition: 0.5s;
 
     &:hover {
       color: #fff;
-      background-color: $primary-colour-dark;
+      background-color: $navbar-colour-highlight;
     }
   }
 }
@@ -80,7 +111,7 @@
 }
 
 // Top Menu Bar
-#topMenu, ul, ul li, ul li a {
+#topMenu, #topMenu ul, #topMenu ul li, #topMenu ul li a {
   height: 100%;
   margin: 0;
   padding: 0;

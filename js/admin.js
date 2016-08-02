@@ -11,6 +11,7 @@ $("body").on("swipeleft", function() {
 $( window ).resize(function() {
   if (sidebarOpen) {
     $("#topMenu").css("width", $(document).width() - 250);
+    $("#main").css("padding-left", 250 + ($(document).width() * 0.02));
   }
 });
 
@@ -31,6 +32,10 @@ function openNav() {
     width: $(document).width() - 250,
   }, 750, function() {
   });
+  $("#main").animate({
+    paddingLeft: 250 + ($(document).width() * 0.02),
+  }, 750, function() {
+  });
   sidebarOpen = true;
   $("#navToggle").text('Close Sidebar');
 }
@@ -42,6 +47,10 @@ function closeNav() {
   });
   $("#topMenu").animate({
     width: "100%",
+  }, 1000, function() {
+  });
+  $("#main").animate({
+    paddingLeft: "2%",
   }, 1000, function() {
   });
   sidebarOpen = false;
