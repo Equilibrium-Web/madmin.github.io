@@ -1966,7 +1966,7 @@ a { color: color("light-blue", "darken-1"); text-decoration: none; -webkit-tap-h
 
 .z-depth-1-half { box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2, .content, .main, .openNav:hover { box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+.z-depth-2, .main, .openNav:hover, .content { box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-3 { box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
 
@@ -2434,6 +2434,52 @@ body.stop-scrolling { height: 100%; overflow: hidden; }
 
 @keyframes rotate-loading { 0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); } }
+
+.navOpen { overflow: hidden; }
+
+.main { transition-duration: 0.5s; transition-timing-function: swing; background-color: #fafafa; width: 100%; height: 100%; position: relative; padding: 5% 5%; border-radius: 5px; }
+
+.main.open { transform: translateX(250px) translateY(50px); -webkit-transform: translateX(250px) translateY(50px); box-shadow: 0 0 50px fade(black, 20%); }
+
+.main section { max-width: 600px; margin: 0 auto; }
+
+.main section h1 { font-weight: 300; font-size: 30px; margin-bottom: 10px; }
+
+.main section h2 { font-weight: 300; font-size: 20px; margin-bottom: 40px; }
+
+.main section p { margin-bottom: 40px; }
+
+.openNav { transition-duration: 0.5s; transition-timing-function: swing; width: 50px; height: 50px; position: fixed; top: 20px; left: 20px; z-index: 9; border-radius: 5px; background-color: #d93232; }
+
+.openNav:hover { cursor: pointer; }
+
+.openNav .icon { transition-duration: 0.2s; position: absolute; width: 30px; height: 2px; background-color: white; top: 24px; left: 10px; }
+
+.openNav .icon:before, .openNav .icon:after { transition-duration: 0.5s; background-color: white; position: absolute; content: ""; width: 30px; height: 2px; left: 0px; }
+
+.openNav .icon:before { top: -7px; }
+
+.openNav .icon:after { top: 7px; }
+
+.openNav.open { transform: translateX(250px) translateY(50px); -webkit-transform: translateX(250px) translateY(50px); }
+
+.openNav.open .icon { background-color: transparent; }
+
+.openNav.open .icon:before, .openNav.open .icon:after { top: 0; }
+
+.openNav.open .icon:before { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
+
+.openNav.open .icon:after { transform: rotate(45deg); -webkit-transform: rotate(45deg); }
+
+nav { background-color: #d93232; width: 100%; height: 100%; position: fixed; left: 0; top: 0; }
+
+nav ul { width: 250px; margin-top: 50px; }
+
+nav ul:hover li a { color: fade(white, 50%); }
+
+nav ul li a { transition-duration: 0.25s; display: block; padding: 5px 40px; color: #dddddd; letter-spacing: 0.02em; text-align: right; }
+
+nav ul li a:hover { cursor: pointer; color: #ffffff; }
 
 input::-moz-focus-inner, button::-moz-focus-inner { border: 0; padding: 0; }
 
@@ -3380,59 +3426,13 @@ textarea { width: 100%; max-width: 100%; height: 10rem; background-color: transp
 
 .content { background-color: #FFFFFF; padding: 3% 5%; margin-top: 3%; margin-bottom: 3%; z-index: 3; line-height: 25px; overflow: hidden; display: block; border-radius: 5px; }
 
-.navOpen { overflow: hidden; }
-
-.main { transition-duration: 0.5s; transition-timing-function: swing; background-color: #fafafa; width: 100%; height: 100%; position: relative; padding: 5% 5%; border-radius: 5px; }
-
-.main.open { transform: translateX(250px) translateY(50px); -webkit-transform: translateX(250px) translateY(50px); box-shadow: 0 0 50px fade(black, 20%); }
-
-.main section { max-width: 600px; margin: 0 auto; }
-
-.main section h1 { font-weight: 300; font-size: 30px; margin-bottom: 10px; }
-
-.main section h2 { font-weight: 300; font-size: 20px; margin-bottom: 40px; }
-
-.main section p { margin-bottom: 40px; }
-
-.openNav { transition-duration: 0.5s; transition-timing-function: swing; width: 50px; height: 50px; position: fixed; top: 20px; left: 20px; z-index: 9; border-radius: 5px; background-color: #d93232; }
-
-.openNav:hover { cursor: pointer; }
-
-.openNav .icon { transition-duration: 0.2s; position: absolute; width: 30px; height: 2px; background-color: white; top: 24px; left: 10px; }
-
-.openNav .icon:before, .openNav .icon:after { transition-duration: 0.5s; background-color: white; position: absolute; content: ""; width: 30px; height: 2px; left: 0px; }
-
-.openNav .icon:before { top: -7px; }
-
-.openNav .icon:after { top: 7px; }
-
-.openNav.open { transform: translateX(250px) translateY(50px); -webkit-transform: translateX(250px) translateY(50px); }
-
-.openNav.open .icon { background-color: transparent; }
-
-.openNav.open .icon:before, .openNav.open .icon:after { top: 0; }
-
-.openNav.open .icon:before { transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
-
-.openNav.open .icon:after { transform: rotate(45deg); -webkit-transform: rotate(45deg); }
-
-nav { background-color: #d93232; width: 100%; height: 100%; position: fixed; left: 0; top: 0; }
-
-nav ul { width: 250px; margin-top: 50px; }
-
-nav ul:hover li a { color: fade(white, 50%); }
-
-nav ul li a { transition-duration: 0.25s; display: block; padding: 5px 40px; color: #dddddd; letter-spacing: 0.02em; text-align: right; }
-
-nav ul li a:hover { cursor: pointer; color: #ffffff; }
-
 .signupCard { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
 .signupCard h1 { font-size: 56px; font-weight: 200; color: white; text-align: center; font-weight: 400; }
 
 .signupCard p { margin-top: 2%; width: 500px; text-align: center; }
 
-.signupCard .heading { position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding-top: 50px; background-color: #d93232; background-size: cover; }
+.signupCard .heading { position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding-top: 50px; background-color: #d93232; background-size: cover; padding-top: 10px; padding-bottom: 10px; }
 
 .signupCard .heading .portrait { position: relative; height: 100px; width: 100px; margin: 30px auto 0; border: 4px solid #fafafa; border-radius: 54px; z-index: 2; }
 
@@ -3446,7 +3446,7 @@ nav ul li a:hover { cursor: pointer; color: #ffffff; }
 
 .footerFloat { margin-bottom: 32px; margin-top: 30px; display: flex; width: 100%; justify-content: space-between; }
 
-.footerBottom { z-index: 2; position: absolute; font-weight: 400; font-size: 15px; bottom: 32px; display: flex; width: 100%; justify-content: space-between; }
+.footerBottom { z-index: 2; position: absolute; bottom: 32px; display: flex; width: 100%; justify-content: space-between; }
 
 @media only screen and (max-width: 475px) { .signupCard p { width: 75%; }
   .signupCard #signup-form { width: 75%; }

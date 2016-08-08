@@ -1,12 +1,12 @@
 <div class="signupCard">
-  <div style="padding-top: 10px;padding-bottom: 10px;" class="heading">
+  <div class="heading">
     <h1>Sign In</h1><br/><br/>
     <svg class="slant" viewBox="0 0 1 1" preserveAspectRatio="none">
       <polygon points="0,1 1,1 1,0">
     </svg>
   </div>
 
-  <form id="signup-form">
+  <form id="signup-form" class="sized">
     <div class="text-input">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" placeholder="" />
@@ -19,13 +19,13 @@
       <span class="separator"> </span>
     </div>
 
-    <center>
-      <div>
-        <input type="checkbox" id="remember" />
-        <label for="remember">Remember Me</label>
-      </div>
-      <br><a onclick="login();" href="./admin.html" class="btn btn-medium btn-blue btn-radius waves-effect">Login</a>
-    </center>
+    <div class="text-center col s6">
+      <input type="checkbox" id="remember" />
+      <label for="remember">Remember Me</label>
+    </div>
+    <div class="text-center col s6">
+      <br/><a onclick="login();" href="./admin.html" class="btn btn-medium btn-blue btn-radius waves-effect">Login</a>
+    </div>
   </form>
 </div>
 
